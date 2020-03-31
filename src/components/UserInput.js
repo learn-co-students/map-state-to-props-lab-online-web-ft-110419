@@ -14,11 +14,13 @@ class UserInput extends Component {
     });
   }
 
+  // code that fires when we press "submit"
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch({type: 'ADD_USER', user: this.state})
   }
 
+  // code that fires when we press "submit"
   render() {
     return(
       <form onSubmit={this.handleOnSubmit}>
