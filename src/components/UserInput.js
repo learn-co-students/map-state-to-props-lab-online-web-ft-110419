@@ -44,4 +44,7 @@ class UserInput extends Component {
   }
 }
 
+
+// By connecting to the Redux Store, we have acess to the dispatch method.
+// The dispathc() function is a key in the Store object.
 export default connect()(UserInput);
