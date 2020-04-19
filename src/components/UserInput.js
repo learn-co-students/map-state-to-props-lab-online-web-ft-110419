@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class UserInput extends Component {
 
   state = {
-    username: '',
+    username: '', 
     hometown: ''
   }
 
@@ -15,6 +15,9 @@ class UserInput extends Component {
   }
 
   handleOnSubmit = (event) => {
+    //event.preventDefault() is called to stop the page 
+    //from refreshing, then this.props.dispatch() is called 
+    //with a custom action, {type: 'ADD_USER', user: this.state}
     event.preventDefault();
     this.props.dispatch({type: 'ADD_USER', user: this.state})
   }
@@ -44,4 +47,7 @@ class UserInput extends Component {
   }
 }
 
+
 export default connect()(UserInput);
+//This makes it possible for us to dispatch custom actions, 
+//as we see here in handleOnSubmit().
